@@ -1,0 +1,74 @@
+@import "reset.css";
+* {
+   transition: 70ms linear;
+}
+#window1 {
+background: #000;
+}
+#side_panel, #tool_bar {
+	background-color: #464646;
+	border:none;
+}
+ #side_panel GtkToggleButton {
+
+    border-color: #000;
+	padding:12px 0px;
+	background: linear-gradient( #565656, #464646 );
+	color:#fff;
+	border-radius:0px;
+	border:none;
+}
+
+#side_panel GtkToggleButton:hover {
+    background: linear-gradient( #67abd6, #4a7fc2 );
+}
+#side_panel GtkToggleButton:active {
+    background: linear-gradient( #67abd6, #4a7fc2 );
+}
+#tool_bar  GtkButton {
+
+background: #4C4C4C;
+border-bottom: 4px solid transparent;
+color:#fff;
+padding:0px 20px;
+margin-left: 333px;
+}
+#tool_bar GtkButton:hover {
+background: #666666;
+border-bottom: 4px solid #67abd6;
+}
+#header {
+background: #F7F7F7;
+border-bottom: solid 1px  #E0E0E0
+}
+#category_title {
+font: 16px;
+color: #525252;
+text-shadow: 2 1  #DBDBDB;
+}
+#trans_view {
+background: transparent;
+}
+#content {
+background: #FFF;
+padding:16px 4px;
+}
+#pack {
+background: linear-gradient(#fff,#F5F5F5);
+
+color: #525252;
+text-shadow: 1 1  #DBDBDB;
+border: solid 1px #C1C7CC;
+border-radius: 5px;
+transition: 100ms linear;
+margin: 1332px;
+}
+#pack:hover {
+background:linear-gradient( #67abd6, #4a7fc2 );
+color: #FFF;
+text-shadow: 1 1  #000;
+}
+#pack:active {
+background: #5C9ACF;
+color: #FFF;
+}

@@ -28,7 +28,7 @@ class PKClient:
     This exclusively uses synchonous calls. Functions which take a long time
     (install/remove packages) have callbacks for progress feedback.
     '''
-    def __init__(self, main_loop=None):
+    def __init__(self, finish_callback, main_loop=None):
         '''Initialize a PackageKit client.
         
         If main_loop is None, this sets up its own gobject.MainLoop(),
@@ -40,7 +40,7 @@ class PKClient:
             main_loop = gobject.MainLoop()
             dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
         self.main_loop = main_loop
-
+        self.finish_callback = finish_callback
         self.bus = dbus.SystemBus()
 
     def SuggestDaemonQuit(self):
@@ -85,7 +85,8 @@ class PKClient:
         self._wait()
         if self._error_enum:
             raise PKError(self._error_enum)
-        return (str(result[1]), str(result[2]), str(result[3]), str(result[4]), int(result[5]))
+        #return (str(result[1]), str(result[2]), str(result[3]), str(result[4]), int(result[5]))
+        return result
 
     def SearchName(self, filter, name):
         '''Search a package by name.
@@ -109,7 +110,7 @@ class PKClient:
         result = []
         pk_xn = self._get_xn()
         pk_xn.connect_to_signal('Package', 
-            lambda i, id, summary: result.append( (str(id).split(';')[0],str(id), str(summary)) )  )
+            lambda i, id, summary: result.append( (str(id).split(';')[0],str(id), str(summary),str(i)) )  )
         pk_xn.connect_to_signal('Finished', self._h_finished)
         pk_xn.connect_to_signal('ErrorCode', self._h_error)
         pk_xn.GetPackages(filter)
@@ -169,6 +170,7 @@ class PKClient:
 
     def _h_finished(self, status, code):
         self._finished_status = status
+        self.finish_callback()
         self.main_loop.quit()
 
     def _h_progress(self, per, subper, el, rem):

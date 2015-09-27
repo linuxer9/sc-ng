@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkScrolledWindow" id="package_details">
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <property name="hscrollbar_policy">never</property>
+    <property name="shadow_type">in</property>
+    <child>
+      <object class="GtkViewport" id="viewport1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkBox" id="package_details_content">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="spacing">3</property>
+            <child>
+              <object class="GtkLabel" id="package_desc">
+                <property name="name">package_desc</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="wrap">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="screenshot">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="yalign">0</property>
+                <property name="xpad">6</property>
+                <property name="pixel_size">265</property>
+                <property name="icon_name">image-x-generic</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkBox" id="package_header">
+    <property name="height_request">59</property>
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkImage" id="package_icon">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="xpad">10</property>
+        <property name="ypad">10</property>
+        <property name="pixel_size">64</property>
+        <property name="icon_name">application-x-executable</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkAlignment" id="alignment1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="xalign">0</property>
+        <property name="xscale">0</property>
+		<property name="top_padding">20</property>
+        <child>
+          <object class="GtkBox" id="box1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkLabel" id="package_title">
+                <property name="name">package_title</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">package_title</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="package_summary">
+				<property name="name">package_summary</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">package_summary</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkAlignment" id="alignment2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="xscale">0.5</property>
+        <property name="top_padding">20</property>
+        <property name="bottom_padding">20</property>
+        <property name="left_padding">20</property>
+        <property name="right_padding">20</property>
+        <child>
+          <object class="GtkButton" id="action_button">
+            <property name="label" translatable="yes">action</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">200</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="use_action_appearance">False</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+  </object>
+</interface>

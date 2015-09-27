@@ -1,7 +1,13 @@
 @import "reset.css";
 * {
    transition: 70ms linear;
+	-GtkScrollbar-activate-slider: 1;
+	-GtkScrollbar-has-forward-stepper: 0;
+	-GtkScrollbar-has-backward-stepper: 0;
+	-GtkScrollbar-has-secondary-forward-stepper: 0;
+	-GtkScrollbar-has-secondary-backward-stepper: 0;
 }
+
 #window1 {
 background: #000;
 }
@@ -46,6 +52,19 @@ font: 16px;
 color: #525252;
 text-shadow: 2 1  #DBDBDB;
 }
+#package_title { 
+font: 18px;
+color: #525252;
+text-shadow: 2 1  #DBDBDB;
+}
+#package_summary { 
+color: #525252;
+}
+#package_desc {
+color: #000;
+font: 12px ;
+}
+
 #trans_view {
 background: transparent;
 }
@@ -72,3 +91,51 @@ text-shadow: 1 1  #000;
 background: #5C9ACF;
 color: #FFF;
 }
+
+.scrollbar.slider.vertical,
+.scrollbar.button.vertical {
+	background:#b9b9b9;
+	border-radius: 10px;
+}
+
+.scrollbar.slider.horizontal,
+.scrollbar.button.horizontal {
+	background:#b9b9b9;
+	border-radius: 10px;
+}
+
+.scrollbar.slider.vertical:prelight,
+.scrollbar.slider.horizontal:prelight,
+.scrollbar.slider.vertical:prelight:active,
+.scrollbar.slider.horizontal:prelight:active {
+	background: #686868;
+}
+
+#install_button {
+background: linear-gradient(#A0D6FF,#4cb1ff);
+color: #525252;
+text-shadow: 1 1  #DBDBDB;
+border: solid 1px #C1C7CC;
+border-radius: 5px;
+transition: 100ms linear;
+}
+#install_button:hover {
+background:linear-gradient( #67abd6, #4a7fc2 );
+color: #FFF;
+text-shadow: 1 1  #000;
+}
+
+#remove_button {
+background: linear-gradient(#FFD2D2, #FF5252 );
+color: #525252;
+text-shadow: 1 1  #DBDBDB;
+border: solid 1px #C1C7CC;
+border-radius: 5px;
+transition: 100ms linear;
+}
+#remove_button:hover {
+background:linear-gradient(#FFE5E5, #F79898 );
+color: #FFF;
+text-shadow: 1 1  #000;
+}
+
